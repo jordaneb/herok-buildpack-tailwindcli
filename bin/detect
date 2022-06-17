@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -f $1/tailwind.config.js ]; then
+  echo "Tailwind config found (tailwind.config.js). Will install Tailwind CLI."
+  exit 0
+else
+  exit 1
+fi

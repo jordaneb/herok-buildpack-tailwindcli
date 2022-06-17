@@ -1,0 +1,21 @@
+#!/bin/sh
+
+BUILD_DIR=$1
+
+output_file_path=$(cat "$3/TAILWIND_OUTPUT_FILE")
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "-----> Found a tailwind.config.js"
+
+wget "https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64" --output-document $BUILD_DIR/tailwindcss | indent
+chmod +x $BUILD_DIR/tailwindcss
+
+echo "Tailwind CLI installed successfully" | indent
+
+cd $HOME
+$BUILD_DIR/tailwindcss -c tailwind.config.js -o $output_file_path
+
+echo "Building CSS" | indent
