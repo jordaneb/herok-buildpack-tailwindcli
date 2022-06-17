@@ -15,7 +15,7 @@ chmod +x $BUILD_DIR/tailwindcss
 
 echo "Tailwind CLI installed successfully" | indent
 
-cd $HOME
+cd $BUILD_DIR
 $BUILD_DIR/tailwindcss -c tailwind.config.js -o $output_file_path
 
 echo "Building CSS" | indent
