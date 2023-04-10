@@ -1,10 +1,12 @@
 # heroku-buildpack-tailwindcli
-This buildpack can be used to compile an app using Tailwind CSS (https://tailwindcss.com/) where a NodeJS runtime is not already available.
+This buildpack can be used to compile an app using the standalone Tailwind CSS (https://tailwindcss.com/) where an appropriate NodeJS runtime is not available or otherwise desired.
 
-# Configuration
-It is necessary to set the `TAILWIND_OUTPUT_FILE` environment variable to tell Tailwind CLI where to output the CSS bundle relative to the app root directory. For example: `TAILWIND_OUTPUT_FILE=static/style.css`.
+# REQUIRED CONFIGURATION
 
-# Disclaimer
-I made this buildpack for my own use on a private Dokku instance so consider this unsupported and if you would like to use it or need to change something to make it work for you then you should fork the repo.
+## `TAILWIND_OUTPUT_FILE`
+**Example:** `static/style.css` - the output CSS file will be created at `/app/static/style.css`
 
-Many thanks
+The path, relative to the `/app` directory, that you need the CSS file to be created at.
+
+# Support disclaimer
+I made this buildpack for my own use on a private Dokku instance so consider this unsupported and if you would like to use it but need to change something to make it work for you then please fork the repo.
